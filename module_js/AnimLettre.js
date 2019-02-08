@@ -15,7 +15,7 @@ export class AnimLettre{
             conteneurLettre.innerHTML = uneLettre;
             conteneurLettre.style.animationDelay = (i * 0.5) + "s";
             elmMot.appendChild(conteneurLettre);
-            i++;
+            i += 0.5;
         }
         this.finAnim();
     }	
