@@ -1,22 +1,22 @@
-export class AnimLettre
-{
-    constructor(lesLettres, elmHeader, finAnim)
-    {
+export class AnimLettre{
+    constructor(lesLettres, elmHeader, finAnim){
         this.lesLettres = lesLettres;
-        this.nbLettres = this.lesLettres.length;
         this.elmHeader = elmHeader;
+        this.finAnim= finAnim;
         this.animerLettres();
     }
     animerLettres(){
-        console.log(this.elmHeader);
+        let elmMot = document.createElement('div');
+        elmMot.classList.add('mot');
+        this.elmHeader.appendChild(elmMot);
         let i = 0;
-        for (let uneLettre of lesLettres){
-            //this.elmHeader
-            //uneLettre.classList.add("animNoel");
-			//uneLettre.style.animationDelay = (i * 0.5) + "s";
-		}
-        /*for(let lettre of this.lesLettres){
-            console.log(lettre);
-        }*/
+        for (let uneLettre of this.lesLettres){
+            let conteneurLettre = document.createElement('div');
+            conteneurLettre.innerHTML = uneLettre;
+            conteneurLettre.style.animationDelay = (i * 0.5) + "s";
+            elmMot.appendChild(conteneurLettre);
+            i++;
+        }
+        this.finAnim();
     }	
 }
