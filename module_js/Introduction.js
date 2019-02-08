@@ -16,7 +16,7 @@ export class Introduction {
 
     constructor(o, elementParent, fonction) {
         //Récupérer les valeurs passées en paramètre			
-        this.titrePrincipal = o.titrePrincipal;
+        this.titrePrincipal = o.titrePrincipal
         this.titreSecondaire = o.titreSecondaire
         this.titreTernaire = o.titreTernaire
         this.description = o.description
@@ -78,8 +78,8 @@ export class Introduction {
     }
 
     terminerIntro(evt) {
-        this.elmParent.firstChild.classList.add('deplacementContenuIntro')
-        this.elmParent.firstChild.addEventListener('animationend', this.passerVersAnimationSuivante.bind(this))
+        this.elmParent.firstElementChild.classList.add('deplacementContenuIntro')
+        this.elmParent.firstElementChild.addEventListener('animationend', this.passerVersAnimationSuivante.bind(this))
     }
 
     passerVersAnimationSuivante(evt) {
